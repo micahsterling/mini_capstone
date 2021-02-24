@@ -8,4 +8,9 @@ class Api::ProductsController < ApplicationController
     @product = Product.find_by(id: 1)
     render 'silverware.json.jb'
   end
+
+  def baby_cactus
+    @product = Product.find_by(id: 2)
+    render 'baby_cactus.json.jb'
+  end
 end

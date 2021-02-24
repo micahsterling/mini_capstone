@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   namespace :api do
     get "/products" => "products#all_products"
     get "/silverware" => "products#silverware"
+    get "/baby_cactus" => "products#baby_cactus"
   end
 end
