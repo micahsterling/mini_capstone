@@ -13,4 +13,15 @@ class Api::ProductsController < ApplicationController
     @product = Product.find_by(id: 2)
     render 'baby_cactus.json.jb'
   end
+  def query
+    output = {id: params[:id]}
+    @product = Product.find_by(output)
+    render 'query.json.jb'
+  end
+
+  def segment
+    output = {id: params[:id]}
+    @product = Product.find_by(output)
+    render "segment.json.jb"
+  end
 end

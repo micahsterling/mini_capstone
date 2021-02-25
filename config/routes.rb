@@ -11,5 +11,7 @@ Rails.application.routes.draw do
     get "/products" => "products#all_products"
     get "/silverware" => "products#silverware"
     get "/baby_cactus" => "products#baby_cactus"
+    get "/query" => "products#query"
+    get "/segment/:id" => "products#segment"
   end
 end
