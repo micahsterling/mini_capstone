@@ -17,7 +17,7 @@ class Api::ProductsController < ApplicationController
     price: params[:price],
     
     )
-    # @product.save
+    @product.save
     render 'show.json.jb'
   end
 end
