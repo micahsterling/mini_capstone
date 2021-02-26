@@ -22,10 +22,10 @@ class Api::ProductsController < ApplicationController
 
   def update
     @product = Product.find_by(id: params[:id])
-    @product.name = "watering can"
-    @product.image_url = "url goes here"
-    @product.description = "used for watering plants"
-    @price = 20
+    @product.name = params[:name]
+    @product.image_url = params[:image_url]
+    @product.description = params[:description]
+    @product.price = params[:price]
     render 'show.json.jb'
   end
 end
