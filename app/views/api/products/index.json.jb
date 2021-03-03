@@ -5,6 +5,6 @@
     image_url: product.image_url,
     price: product.price,
     description: product.description,
-    is_discounted: product.is_discounted
+    is_discounted: product.is_discounted?
   }
 end
