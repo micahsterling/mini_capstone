@@ -16,8 +16,13 @@ class Api::ProductsController < ApplicationController
     description: params[:description],
     price: params[:price],
     )
-    @product.save
-    render 'show.json.jb'
+    if @product.save
+      # happy path
+      render 'show.json.jb'
+    else
+      # sad path
+      render json: {message: @product.errors.full_messages}
+    end
   end
 
   def update
