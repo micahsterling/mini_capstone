@@ -16,4 +16,13 @@ class Product < ApplicationRecord
     price * 0.09
   end
 
+  def supplier
+    # Supplier.find_by(id: supplier_id)
+    belongs_to :suppliers
+  end
+
+  def images
+    has_many :images
+  end
+
 end
