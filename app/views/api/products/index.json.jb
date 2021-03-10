@@ -2,10 +2,10 @@
   {
     id: product.id,
     name: product.name,
-    # image_url: product.image_url,
+    images: product.images,
     price: product.price,
+    quantity: product.quantity,
     description: product.description,
     is_discounted: product.is_discounted?
-    
   }
 end

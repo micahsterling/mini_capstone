@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   validates :description, length: {in: 10..500}
   validates :price, presence:true
   validates :price, numericality: { greater_than: 0}
+  has_many :images
   def is_discounted?
     if price < 10
       return true
@@ -20,9 +21,4 @@ class Product < ApplicationRecord
     # Supplier.find_by(id: supplier_id)
     belongs_to :suppliers
   end
-
-  def images
-    has_many :images
-  end
-
 end

@@ -13,6 +13,14 @@ class Api::ProductsController < ApplicationController
       @products = Product.all
     end
     # {"sort"=>"price", "sort_order"=>"asc"}
+    if current_user
+      @products = Product.all
+    else
+      @products = []
+    end
+    p "HERE IS THE CURRENT USER"
+    p current_user
+    p "THERE WAS THE CURRENT USER"
     render 'index.json.jb'
   end
 
@@ -24,9 +32,10 @@ class Api::ProductsController < ApplicationController
   def create
     @product = Product.new(
     name: params[:name],
-    # image_url: params[:image_url],
+    image: params[:image],
     description: params[:description],
     price: params[:price],
+    quantity: params[:quantity]
     )
     if @product.save
       # happy path
