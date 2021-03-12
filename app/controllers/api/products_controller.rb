@@ -1,4 +1,5 @@
 class Api::ProductsController < ApplicationController
+  # before_action :authenticate_admin, only: [:destroy, :create, :update]
   def index
   
     # @products = Product.order([{param[:sort] => params[:sort_order])
@@ -52,6 +53,8 @@ class Api::ProductsController < ApplicationController
     # @product.image_url = params[:image_url] || @product.image_url
     @product.description = params[:description] || @product.description
     @product.price = params[:price] || @product.price
+    @product.quantity = params[:quantity] || @product.quantity
+    @product.supplier_id = params[:supplier_id] || @product.supplier_id
     @product.save
     render 'show.json.jb'
   end

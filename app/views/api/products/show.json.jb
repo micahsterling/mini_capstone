@@ -4,5 +4,6 @@
   images: @product.images,
   description: @product.description,
   price: @product.price,
-  quantity: @product_id.quantity
+  quantity: @product.quantity,
+  # supplier: @product.supplier.name
 }
