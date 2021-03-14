@@ -11,7 +11,7 @@ class Product < ApplicationRecord
   has_many :categories, through: :category_products
   has_many :carted_products
   has_many :orders, through: :carted_products
-  has_many :users, throughL: :carted_products 
+  has_many :users, through: :carted_products 
 
   def is_discounted?
     if price < 10

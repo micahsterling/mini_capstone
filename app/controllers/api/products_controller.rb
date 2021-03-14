@@ -1,5 +1,5 @@
 class Api::ProductsController < ApplicationController
-  # before_action :authenticate_admin, only: [:destroy, :create, :update]
+  before_action :authenticate_admin, only: [:destroy, :create, :update]
   def index
   
     # @products = Product.order([{param[:sort] => params[:sort_order])
